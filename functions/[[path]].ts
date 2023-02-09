@@ -19,7 +19,9 @@ export async function onRequestGet(context) {
 
     let folders = objList.delimitedPrefixes;
     return new Response(JSON.stringify({ value: objKeys, folders }), {
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*'},
     });
   } catch (e) {
     return new Response(e.toString(), { status: 500 });

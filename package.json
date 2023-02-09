@@ -1,0 +1,22 @@
+{
+  "name": "render-json",
+  "version": "0.0.2",
+  "description": "Web api to view cdn contents",
+  "scripts": {
+    "dev": "wrangler pages dev . --r2 BUCKET"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exaby/render-json.git"
+  },
+  "author": "longern",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Exaby/render-json/issues"
+  },
+  "homepage": "https://spco.xyz",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.3.1",
+    "wrangler": "^2.6.2"
+  }
+}

@@ -4,10 +4,7 @@ async function getCurrentBucket(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const driveid = url.hostname.replace(/\..*/, "");
-
-  if (!(await env[driveid].head("_$flaredrive$/CNAME")))
-    await env[driveid].put("_$flaredrive$/CNAME", url.hostname);
-
+  
   const client = new S3Client(env.AWS_ACCESS_KEY_ID, env.AWS_SECRET_ACCESS_KEY);
   const bucketsResponse = await client.s3_fetch(
     `https://${env.CF_ACCOUNT_ID}.r2.cloudflarestorage.com/`
